@@ -1,0 +1,55 @@
+ # finding same years with their indexes:
+        sameyearwithindex = []
+        ind2 = 0
+        for block in implist:
+            if ind2 == len(implist):
+                  break
+            if ind2 == 0:
+
+                if block != implist[ind2 + 1]:
+                    ind2 += 1
+                    continue
+                else:
+                    a = []
+                    a.append(sorted_list[ind2][0])
+                    a.append(ind2)
+                    sameyearwithindex.append(a)
+                    ind2 += 1
+            elif ind2 == len(implist) -1:
+                if block != implist[ind2 - 1]:
+                    ind2 += 1
+                    continue
+                else:
+                    a = []
+                    a.append(sorted_list[ind2][0])
+                    a.append(ind2)
+                    sameyearwithindex.append(a)
+                    ind2 += 1
+            else:
+                if block != implist[ind2 + 1] and block != implist[ind2 - 1]:
+                    ind2 += 1
+                    continue
+                else:
+                    a = []
+                    a.append(sorted_list[ind2][0])
+                    a.append(ind2)
+                    sameyearwithindex.append(a)
+                    ind2 += 1
+
+        print(sameyearwithindex)
+
+
+
+            if checksameyears(sorted_list) == "same":
+        years_list = []
+        yearcountlist = []
+        implist = []
+        for item in sorted_list:
+            years_list.append(item[0])
+        for year in years_list:
+            yearcountlist.append(years_list.count(year))
+        for i in range(len(years_list)):
+            duml =[]
+            duml.append(years_list[i])
+            duml.append(yearcountlist[i])
+            implist.append(duml)
